@@ -1,5 +1,12 @@
 <h1><%= @user.name %></h1>
-<p><% @user.appointments.each do |appointment| %></p>
-  <p><%= appointment.doctor %></p>
-<% end %>
 <p> <%= link_to 'Edit name', edit_user_path(@user) %></p>
+<h2>Appointments</h2>
+<ul>
+  <% @user.appointments.each do |appointment| %>
+    <li>
+      Doctor: <%= appointment.doctor.name %>
+    <br />
+    Date and Time: <%= appointment.appointment_date %>
+    </li>
+  <% end %>
+</ul>
